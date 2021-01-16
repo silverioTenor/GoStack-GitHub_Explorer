@@ -106,13 +106,13 @@ export const Repositories = styled.div`
 
     svg {
       margin-left: auto;
-      color: #cbcbd6;
+      color: #C9C9D4;
     }
   }
 `;
 
 export const Error = styled.span`
-  margin-top: 30px;
+  margin-top: 10px;
   display: block;
   color: #c53030;
 `;
