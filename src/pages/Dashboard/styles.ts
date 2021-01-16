@@ -1,7 +1,12 @@
-import styled from 'styled-components';
+/* eslint-disable prettier/prettier */
+import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
-export const Header = styled.header`
+interface FormProps {
+  hasError: boolean;
+}
+
+export const Header = styled.header<FormProps>`
   h1 {
     width: 440px;
     margin-top: 100px;
@@ -20,8 +25,15 @@ export const Header = styled.header`
       padding: 24px 30px;
       flex: 1;
       color: #3a3a3a;
-      border: 0;
+      border: 2px solid #fff;
+      border-right: 0;
       border-radius: 5px 0 0 5px;
+
+      ${props =>
+    props.hasError &&
+    css`
+        border-color: #c53030;
+      `}
 
       &::placeholder {
         color: #a8a8b3;
@@ -34,12 +46,13 @@ export const Header = styled.header`
       font-weight: bold;
       color: #fff;
       background: #04d361;
-      border: 0;
+      border: 2px solid #04d361;
       border-radius: 0 5px 5px 0;
       transition: background 0.2s;
 
       &:hover {
         background: ${shade(0.2, '#04d361')};
+        border-color: ${shade(0.2, '#04d361')};
       }
     }
   }
@@ -75,7 +88,8 @@ export const Repositories = styled.div`
     }
 
     .content {
-      margin-left: 24px;
+      margin: 0 24px;
+      flex: 1;
 
       strong {
         display: block;
@@ -95,4 +109,10 @@ export const Repositories = styled.div`
       color: #cbcbd6;
     }
   }
+`;
+
+export const Error = styled.span`
+  margin-top: 30px;
+  display: block;
+  color: #c53030;
 `;

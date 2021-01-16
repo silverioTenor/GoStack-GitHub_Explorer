@@ -27,6 +27,17 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
+    "camelcase": "off",
+    "@typescript-eslint/ban-types": "off",
+    "no-use-before-define": "off",
+    "prettier/prettier": "error",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -42,12 +53,7 @@
           ".tsx"
         ]
       }
-    ],
-    "import/prefer-default-export": "off",
-    "camelcase": "off",
-    "@typescript-eslint/ban-types": "off",
-    "no-use-before-define": "off",
-    "prettier/prettier": "error"
+    ]
   },
   "settings": {
     "import/resolver": {
